@@ -2,12 +2,12 @@
 	import Dialog from './Dialog.svelte';
 	import InfoPanel from './Info Panel.svelte';
 	import Space from './Space.svelte';
-	// import Stats from './Stats.svelte';
+	import Stats from './Stats.svelte';
 	import Prompts from './Prompts.svelte';
 </script>
 
 <div class="game-page">
-	<!-- <Stats/> -->
+	<Stats/>
 	<InfoPanel />
 	<Space />
 	<Dialog />

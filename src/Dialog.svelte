@@ -10,7 +10,7 @@
         ${ul}
         ${li}<span>Use arrow keys to adjust your velocity—horizontal or vertical.  Speed increases are capped.</span></li>
         ${li}<span>Touching a live kitten turns it into a permanent zombie.</span></li>
-        ${li}<span>Zombie kittens spread the plague. Their infections are temporary.</span></li>
+        ${li}<span>Infected kittens spread the plague, but their infections are temporary.</span></li>
         ${li}<span>Keep at least one kitten alive.</span></li>
         </ul>`;
 

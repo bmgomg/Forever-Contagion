@@ -1,10 +1,10 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { ss } from './state.svelte';
-	import { isZet, isPet } from './utils';
+	import { isZet } from './utils';
 	import { random } from 'lodash-es';
 
-	const { fob, src, style: imgStyle, scale = 1 } = $props();
+	const { fob, src, scale = 1 } = $props();
 	const { cx, cy, radius, tilt } = $derived(fob);
 	const transition = $derived(ss.landing ? 'transform 1s, width 1s' : '');
 
@@ -14,8 +14,8 @@
 </script>
 
 <div class="fob" {style} transition:fade={{ duration: ss.over ? 500 : 0 }}>
-	<div class="content {fob.shake ? 'shake' : ''}" style={`rotate: ${tilt || 0}deg; transition: rotate ${ss.over ? '1s' : '0.3s'}; ${imgStyle}`}>
-		<img class={isPet(fob) ? 'pet' : ''} {src} alt="" style='animation-delay: {random(0,1)}s;'/>
+	<div class="content {fob.shake ? 'shake' : ''}" style={`rotate: ${tilt || 0}deg; transition: rotate ${ss.over ? '1s' : '0.3s'};`}>
+		<img class={fob.dead ? (fob.dead === true ? '' : 'sick') : 'alive'} {src} alt="" style="animation-delay: {random(0, 1)}s;" />
 	</div>
 </div>
 
@@ -26,7 +26,6 @@
 		box-sizing: border-box;
 		aspect-ratio: 1;
 		border-radius: 50%;
-		/* background: #fff7; */
 		place-self: start;
 	}
 
@@ -68,25 +67,29 @@
 		}
 	}
 
-	@keyframes spinner {
+	.alive {
+		animation: alive 1.5s linear alternate infinite;
+	}
+
+	@keyframes alive {
 		from {
-			transform: rotate(0deg);
+			transform: rotate(-30deg);
 		}
 		to {
-			transform: rotate(359deg);
+			transform: rotate(30deg);
 		}
 	}
 
-	.pet {
-		animation: pet 1.5s linear alternate infinite;
+	.sick {
+		animation: sick 1.5s linear alternate infinite;
 	}
 
-	@keyframes pet {
+	@keyframes sick {
 		from {
-			transform: rotate(-20deg);
+			transform: rotate(-15deg);
 		}
 		to {
-			transform: rotate(20deg);
+			transform: rotate(15deg);
 		}
 	}
 </style>

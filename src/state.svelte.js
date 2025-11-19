@@ -43,6 +43,6 @@ export const _prompt = $state({
 export const _stats = $state({
     plays: 0,
     won: 0,
-    total_points: 0,
-    best_points: 0,
+    total_ticks: 0,
+    best_ticks: 0,
 });

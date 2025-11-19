@@ -145,7 +145,7 @@ const onTick = () => {
                     fob.dead = isPet(zob) ? ss.ticks : true;
 
                     if (ss.fobs.filter(f => isPet(f)).every(f => f.dead)) {
-                        onOver('lost');
+                        onOver();
                     }
                 }
             };
@@ -188,13 +188,13 @@ export const loadGame = () => {
         _sound.music = job.music;
         _stats.plays = job.plays;
         _stats.won = job.won;
-        _stats.total_points = job.total_points;
-        _stats.best_points = job.best_points;
+        _stats.total_ticks = job.total_ticks;
+        _stats.best_ticks = job.best_ticks;
     } else {
         _stats.plays = 0;
         _stats.won = 0;
-        _stats.total_points = 0;
-        _stats.best_points = 0;
+        _stats.total_ticks = 0;
+        _stats.best_ticks = 0;
     }
 };
 
@@ -261,25 +261,22 @@ export const doResize = (init) => {
     }
 };
 
-export const onOver = (over) => {
-    _sound.play(over === 'won' ? 'won' : 'lost');
+export const onOver = () => {
+    _sound.play('lost');
     clearInterval(ss.timer);
     delete ss.timer;
 
-    if (over === 'won') {
-        post(() => {
-            _stats.won += 1;
+    post(() => {
+        _stats.won += 1;
 
-            // const points = score();
-            // _stats.total_points += points;
+        _stats.total_ticks += ss.ticks;
 
-            // if (points > _stats.best_points) {
-            //     _stats.best_points = points;
-            // }
+        if (_stats.won === 1 || ss.ticks > _stats.best_ticks) {
+            _stats.best_ticks = ss.ticks;
+        }
 
-            persist();
-        });
-    }
+        persist();
+    });
 
-    ss.over = over;
+    ss.over = true;
 };

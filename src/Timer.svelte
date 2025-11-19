@@ -1,10 +1,9 @@
 <script>
 	import NumberFlow, { NumberFlowGroup } from '@number-flow/svelte';
-	import { ss } from './state.svelte';
 	import { TICK_MS } from './const';
 
-	// const { secs } = $props();
-	const secs = $derived(((ss.ticks || 0) * TICK_MS) / 1000);
+	const { ticks } = $props();
+	const secs = $derived(((ticks || 0) * TICK_MS) / 1000);
 
 	const time = $derived.by(() => {
 		const ds = (secs - Math.floor(secs)) * 10;
@@ -29,8 +28,6 @@
 	.group {
 		display: grid;
 		grid-auto-flow: column;
-		transition: opacity 0.5s;
-		color: var(--rose);
-		filter: drop-shadow(0 0 3px #000000a0);
+		/* font-weight: bold; */
 	}
 </style>
