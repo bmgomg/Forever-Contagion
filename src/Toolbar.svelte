@@ -33,11 +33,11 @@
 
 	.tools {
 		grid-area: 1/1;
-		opacity: 0.6;
+		/* opacity: 0.6; */
 	}
 
 	.pause {
 		grid-area: 1/1;
-		opacity: 0.6;
+		/* opacity: 0.6; */
 	}
 </style>

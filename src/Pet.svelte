@@ -10,4 +10,4 @@
 	let fob = $derived(ss.fobs[i + index]);
 </script>
 
-<Fob bind:fob={fob} src={fob.dead === true ? petDead : fob.dead ? petSick : pet} style={`opacity: ${ss.over ? 0.35 : 1}`} />
+<Fob bind:fob={fob} src={fob.dead === true ? petDead : fob.dead ? petSick : pet} />

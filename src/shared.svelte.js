@@ -221,7 +221,7 @@ const addZet = () => {
     const width = ss.space.width - radius * 2;
     const height = ss.space.height - radius * 2;
 
-    const elon = { id: 'zet', cx: random(width) + radius, cy: random(height) + radius, radius, vel: { x: 0, y: 0 }, ticks: 0 };
+    const elon = { id: 'zet', cx: random(width) + radius, cy: random(height) + radius, radius, vel: { x: 0, y: 0 }, ticks: 0, dead: true };
     ss.fobs.push(elon);
 };
 
@@ -280,4 +280,6 @@ export const onOver = (over) => {
             persist();
         });
     }
+
+    ss.over = over;
 };

@@ -1,6 +1,6 @@
 <script>
 	import Dialog from './Dialog.svelte';
-	// import InfoPanel from './Info Panel.svelte';
+	import InfoPanel from './Info Panel.svelte';
 	import Space from './Space.svelte';
 	// import Stats from './Stats.svelte';
 	import Prompts from './Prompts.svelte';
@@ -8,8 +8,8 @@
 
 <div class="game-page">
 	<!-- <Stats/> -->
+	<InfoPanel />
 	<Space />
-	<!-- <InfoPanel /> -->
 	<Dialog />
 	<Prompts />
 </div>

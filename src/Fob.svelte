@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import { ss } from './state.svelte';
 	import { isZet, isPet } from './utils';
+	import { random } from 'lodash-es';
 
 	const { fob, src, style: imgStyle, scale = 1 } = $props();
 	const { cx, cy, radius, tilt } = $derived(fob);
@@ -14,7 +15,7 @@
 
 <div class="fob" {style} transition:fade={{ duration: ss.over ? 500 : 0 }}>
 	<div class="content {fob.shake ? 'shake' : ''}" style={`rotate: ${tilt || 0}deg; transition: rotate ${ss.over ? '1s' : '0.3s'}; ${imgStyle}`}>
-		<img class={isPet(fob) ? 'pet' : ''} {src} alt="" />
+		<img class={isPet(fob) ? 'pet' : ''} {src} alt="" style='animation-delay: {random(0,1)}s;'/>
 	</div>
 </div>
 
