@@ -232,7 +232,7 @@ const addZet = () => {
     const width = ss.space.width - radius * 2;
     const height = ss.space.height - radius * 2;
 
-    const zet = { id: 'zet', cx: random(width) + radius, cy: random(height) + radius, radius, vel: { x: 0, y: 0 }, dead: true };
+    const zet = { id: 'zet', cx: random(width) + radius, cy: random(height) + radius, radius, vel: { x: 0, y: 0 }, dead: true, lives: 0 };
     ss.fobs.push(zet);
 };
 

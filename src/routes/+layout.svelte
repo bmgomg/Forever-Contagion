@@ -46,9 +46,4 @@
 		font-family: Radhiumz;
 		src: url('$lib/fonts/NcsRadhiumz-Rp3x6.ttf');
 	}
-
-	@font-face {
-		font-family: 'Roboto Condensed';
-		src: url('$lib/fonts/Roboto Condensed.ttf');
-	}
 </style>

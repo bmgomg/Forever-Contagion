@@ -46,8 +46,6 @@
 	.lives {
 		grid-area: 1/1;
 		place-self: start center;
-		font-family: Roboto Condensed;
-		/* font-size: 13px; */
 		z-index: 1;
 		background: black;
 		border-radius: 50%;
