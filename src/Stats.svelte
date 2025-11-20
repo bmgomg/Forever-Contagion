@@ -20,7 +20,7 @@
 		<div class="flow bold"><Timer ticks={ave} /></div>
 	</div>
 	<div class="item">
-		<span class="label">best</span>
+		<span class="label">longest</span>
 		<div class="flow bold"><Timer ticks={_stats.best_ticks} /></div>
 	</div>
 </div>
