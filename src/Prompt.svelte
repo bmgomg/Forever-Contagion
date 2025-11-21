@@ -2,9 +2,10 @@
 	import { fade } from 'svelte/transition';
 	import { ss } from './state.svelte';
 
-	const LAUNCH = $derived('<span>press  SPACE  to start</span>');
-	const RESTART = $derived('<span>press  SPACE  to restart</span>');
-	const DISMISS = $derived('<span style=\'font-family: DMSans;\'>press  ESC  to dismiss</span>');
+	const hi = '<span style="color: #ffe4aae0;">';
+	const LAUNCH = $derived(`<span>press  ${hi}SPACE</span>  to start</span>`);
+	const RESTART = $derived(`<span>press  ${hi}SPACE</span>  to restart</span>`);
+	const DISMISS = $derived(`<span style='font-family: Quicksand;'>press  ${hi}ESC</span>  to dismiss</span>`);
 	const style = $derived(`font-size: ${Math.min(24, 30 * Math.min(ss.scale, 1))}px;`);
 </script>
 

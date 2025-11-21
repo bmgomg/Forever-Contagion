@@ -3,16 +3,21 @@
 	import { ss } from './state.svelte';
 
 	const ul = '<ul style="margin: 25px 0 0 0;">';
-	const li = '<li style="margin: 12px 0 0 -20px;">';
+	const li = '<li style="margin: 12px 0 0 -20px; color: var(--gold);">';
+	const gold = '<span style="color:#ffe4aae0">';
+	const orange = '<span style="color: var(--orange)">';
+	const green = '<span style="color: var(--green)">';
+	const blue = '<span style="color: var(--blue);">';
+	const lightblue = '<span style="color: var(--lightblue);">';
 
 	const CONTENT = `
-        <span style='font-style: italic;'>You are a self-aware zombie doomed to drift through space, trying not to infect the innocent.</span>
+        <span style='font-style: italic;'>You are an ${green}alien</span> carrying a dangerous ${orange}virus</span>. You drift through space trying ${green}not to infect</span> the innocent.</span>
         ${ul}
-        ${li}<span>Use arrow keys to adjust your velocity—horizontal and vertical. Speed increases are capped.</span></li>
-        ${li}<span>Touching a live kitten turns it into a zombie.</span></li>
-        ${li}<span>Zombie kittens spread the plague.</span></li>
-        ${li}<span>After a short time, zombie kittens revive and can be infected again.</span></li>
-        ${li}<span>Keep all 10 kittens alive at the same time—for as long as possible.</span></li>
+        ${li}${blue}Use ${lightblue}arrow keys</span> to adjust your ${lightblue}velocity</span>—horizontal and vertical. Speed increases are ${lightblue}capped</span>.</span></span></li>
+        ${li}${blue}A contact with a ${gold}cute kitten</span> turns it into a ${orange}zombie</span>.</span></span></li>
+        ${li}${blue}Zombie kittens ${green}spread</span> the plague.</span></span></li>
+        ${li}${blue}After a short time, zombie kittens ${gold}revive</span> and can be ${green}infected again</span>.</span></span></li>
+        ${li}${blue}Keep ${gold}all 10 kittens</span> alive ${lightblue}at the same time</span>—for as long as possible.</span></span></li>
         </ul>`;
 
 	const width = $derived(ss.space?.width > 580 ? '540px' : '80%');
@@ -38,7 +43,7 @@
 	}
 
 	.content {
-		/* font-weight: bold; */
+		font-weight: bold;
 		display: grid;
 		align-content: start;
 		place-self: center;

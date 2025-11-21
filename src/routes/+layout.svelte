@@ -15,10 +15,16 @@
 		body {
 			margin: 0;
 			overflow: hidden;
-			--background: #000;
+			--background: #021631;
 			background: var(--background);
-			color: white;
-			font-family: DMSans;
+			--blue: #aadaffa0;
+			color: var(--blue);
+			--orange: #f79600;
+			--tan: #998c67;
+			--gold: #ffe4aae0;
+			--lightblue: #aadaffe8;
+			--green: #c6ffaae8;
+			font-family: Quicksand;
 		}
 
 		.no-highlight {

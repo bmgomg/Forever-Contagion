@@ -174,7 +174,7 @@
 	post(() => (splash = false), 2000);
 </script>
 
-<div class="app">
+<div class="app pulse">
 	<GamePage />
 	{#if splash}
 		<Splash />
@@ -191,5 +191,21 @@
 		touch-action: manipulation;
 		outline: none !important;
 		box-sizing: border-box;
+		background-image: url('$lib/images/Sky.jpg');
+		background-position-x: center;
+		background-position-y: center;
+	}
+
+	.pulse {
+		animation: pulse 10s alternate infinite ease-in-out;
+	}
+
+	@keyframes pulse {
+		from {
+			background-size: 2000px;
+		}
+		to {
+			background-size: 1500px;
+		}
 	}
 </style>
