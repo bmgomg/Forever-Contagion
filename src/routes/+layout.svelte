@@ -15,15 +15,9 @@
 		body {
 			margin: 0;
 			overflow: hidden;
-			--background: #021631;
+			--background: #000;
 			background: var(--background);
-			--blue: #aadaffa0;
-			color: var(--blue);
-			--orange: #f79600;
-			--tan: #998c67;
-			--gold: #ffe4aae0;
-			--lightblue: #aadaff;
-			--green: #c6ffaae8;
+			color: #fff;
 			font-family: Quicksand;
 		}
 

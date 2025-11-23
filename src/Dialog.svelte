@@ -4,7 +4,7 @@
 
 	const ul = '<ul style="margin: 25px 0 0 0;">';
 	const li = '<li style="margin: 12px 0 0 -20px; color: var(--gold);">';
-	const gold = '<span style="color:#ffe4aae0">';
+	const gold = '<span style="color:#fff">';
 	const orange = '<span style="color: var(--orange)">';
 	const green = '<span style="color: var(--green)">';
 	const blue = '<span style="color: var(--blue);">';

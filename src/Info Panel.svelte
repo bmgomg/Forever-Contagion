@@ -28,7 +28,7 @@
 		place-items: center;
 		gap: 5px;
 		color: var(--lightblue);
-		opacity: 0.7;
+		/* opacity: 0.7; */
 		pointer-events: none;
 	}
 

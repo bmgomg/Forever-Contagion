@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import { ss } from './state.svelte';
 
-	const hi = '<span style="color: #ffe4aae0;">';
+	const hi = '<span style="color: #fff;">';
 	const LAUNCH = $derived(`<span>press  ${hi}SPACE</span>  to start</span>`);
 	const RESTART = $derived(`<span>press  ${hi}SPACE</span>  to restart</span>`);
 	const DISMISS = $derived(`<span style='font-family: Quicksand;'>press  ${hi}ESC</span>  to dismiss</span>`);

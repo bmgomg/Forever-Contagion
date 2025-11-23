@@ -1,4 +1,4 @@
-export const APP_KEY = 'CONTAGION V1';
+export const APP_KEY = 'PMN V1';
 export const PROMPT_TRANSITION = 300;
 export const PROMPT_RESET_STATS = 'RESET STATS?';
 export const PI_OVER_180 = Math.PI / 180;
