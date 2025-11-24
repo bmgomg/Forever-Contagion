@@ -11,7 +11,7 @@
 {#if !ss.dlg}
 	<div class="info-panel" style="font-size: {fsz}px;">
 		<div class="label" style="font-size: {lsz}px;">live kittens</div>
-		<div class="num">
+		<div class="num {ss.streak_ticks ? 'live' : ''}">
 			<NumberFlow value={liveCount()} />
 		</div>
 		<div></div>
