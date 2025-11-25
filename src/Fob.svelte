@@ -22,11 +22,21 @@
 	</div>
 	{#if isZet(fob)}
 		{@const { x, y } = fob.vel}
-		<!-- <div class="vel" style="width: ${w}px; translate: {x < 0 ? off : -off}px 0;">{Math.abs(x).toFixed(1)}</div> -->
-		<!-- <div class="vel" style="width: ${w}px; translate: 0 {y < 0 ? off : -off}px;">{Math.abs(y).toFixed(1)}</div> -->
+		{#if false}
+			{@const w = radius * 0.25}
+			{@const off = radius * 1.3}
+			{@const _x = Math.abs(x).toFixed(1) * 2}
+			{@const _y = Math.abs(y).toFixed(1) * 2}
+			{#if _x}
+				<div class="vel" style="width: ${w}px; translate: {x > 0 ? off : -off}px 0;">{_x}</div>
+			{/if}
+			{#if _y}
+				<div class="vel" style="width: ${w}px; translate: 0 {(y > 0 ? off : -off) * 1.1}px;">{_y}</div>
+			{/if}
+		{/if}
 		{#each [1, 2, 3, 4, 5, 6] as i}
 			{@const threshold = i * ZET_VELOCITY_DELTA * ss.scale}
-			{@const w = radius * 1 * (1 - i * 0.12)}
+			{@const w = radius * 1 * (1 - i * 0.05)}
 			{@const off = 4 * (i + 1)}
 			{#if Math.abs(x).toFixed(1) >= threshold}
 				{@const cls = x < 0 ? 'wave-x-r' : 'wave-x-l'}
