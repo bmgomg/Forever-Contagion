@@ -122,11 +122,6 @@
 		grid-area: 1/1;
 		place-self: center;
 		font-size: 18px;
-		text-shadow:
-			1px 1px black,
-			1px -1px black,
-			-1px -1px black,
-			-1px 1px black;
 		display: grid;
 		place-content: center;
 	}
@@ -135,11 +130,6 @@
 		grid-area: 1/1;
 		place-self: start;
 		font-size: 18px;
-		text-shadow:
-			1px 1px black,
-			1px -1px black,
-			-1px -1px black,
-			-1px 1px black;
 		display: grid;
 		color: gold;
 		font-weight: bold;

@@ -9,7 +9,7 @@
 </script>
 
 {#if !ss.dlg}
-	<div class="info-panel" style="font-size: {fsz}px;">
+	<div class="info-panel {ss.over ? 'over' : ''}" style="font-size: {fsz}px;">
 		<div class="label" style="font-size: {lsz}px;">live kittens</div>
 		<div class="num">
 			<NumberFlow value={liveCount()} />
@@ -30,6 +30,11 @@
 		color: var(--lightblue);
 		opacity: 0.7;
 		pointer-events: none;
+	}
+
+	.over {
+		z-index: 2;
+		opacity: 0.9;
 	}
 
 	.label {

@@ -9,4 +9,4 @@ export const PET_RADIUS = 40;
 export const ZET_MAX_VELOCITY = 4;
 export const ZET_VELOCITY_DELTA = 0.5;
 export const PET_VELOCITY = 3.5;
-export const PET_COUNT = 10;
+export const PET_COUNT = 9;
