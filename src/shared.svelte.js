@@ -1,5 +1,5 @@
 import { isNumber, random } from 'lodash-es';
-import { APP_KEY, DEAD_MS, LEVEL_DELTA, PET_COUNT, PET_RADIUS, PET_VELOCITY, TICK_MS, ZET_RADIUS } from './const';
+import { APP_KEY, DEAD_MS, LEVEL_DELTA, LEVEL_SECS, PET_COUNT, PET_RADIUS, PET_VELOCITY, TICK_MS, ZET_RADIUS } from './const';
 import { _sound } from './sound.svelte';
 import { _prompt, _stats, ss } from './state.svelte';
 import { clientRect, handleCollision, isZet, overlap, post, ticksToSecs } from './utils';
@@ -105,7 +105,7 @@ const onTick = () => {
         }
     }
 
-    if (ss.streak_ticks && ticksToSecs(ss.streak_ticks) % 60 === 0) {
+    if (ss.streak_ticks && ticksToSecs(ss.streak_ticks) % LEVEL_SECS === 0) {
         showDialog('DLG LEVEL UP');
         clearInterval(ss.timer);
         return;
