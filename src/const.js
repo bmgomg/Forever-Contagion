@@ -10,3 +10,4 @@ export const ZET_MAX_VELOCITY = 3;
 export const ZET_VELOCITY_DELTA = 0.5;
 export const PET_VELOCITY = 3.7;
 export const PET_COUNT = 10;
+export const LEVEL_DELTA = 0.1;

@@ -1,5 +1,5 @@
 import { isNumber, random } from 'lodash-es';
-import { APP_KEY, DEAD_MS, PET_COUNT, PET_RADIUS, PET_VELOCITY, TICK_MS, ZET_RADIUS } from './const';
+import { APP_KEY, DEAD_MS, LEVEL_DELTA, PET_COUNT, PET_RADIUS, PET_VELOCITY, TICK_MS, ZET_RADIUS } from './const';
 import { _sound } from './sound.svelte';
 import { _prompt, _stats, ss } from './state.svelte';
 import { clientRect, handleCollision, isZet, overlap, post } from './utils';
@@ -24,6 +24,18 @@ const wellScattered = () => {
     }
 
     return true;
+};
+
+const levelUp = () => {
+    ss.level += 1;
+    _sound.play('dice');
+
+    do {
+        ss.fobs = [];
+
+        addZet();
+        addPets();
+    } while (!wellScattered());
 };
 
 export const onStart = () => {
@@ -90,6 +102,11 @@ const onTick = () => {
             persist();
         }
     }
+
+    // if (ticksToSeconds(ss.ticks) % 10 === 0) {
+    //     levelUp();
+    //     return;
+    // }
 
     const zet = findZet();
     zet.cx += zet.vel.x;
@@ -242,7 +259,7 @@ const makeVelocity = (velocity) => {
 };
 
 const addZet = () => {
-    const radius = ZET_RADIUS * ss.scale;
+    const radius = ZET_RADIUS * ss.scale * (1 + (ss.level - 1) * LEVEL_DELTA);
 
     const width = ss.space.width - radius * 2;
     const height = ss.space.height - radius * 2;
@@ -252,7 +269,7 @@ const addZet = () => {
 };
 
 const addPets = () => {
-    const radius = PET_RADIUS * ss.scale;
+    const radius = PET_RADIUS * ss.scale * (1 + (ss.level - 1) * LEVEL_DELTA);
 
     const width = ss.space.width - radius * 2;
     const height = ss.space.height - radius * 2;

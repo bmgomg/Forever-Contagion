@@ -3,6 +3,7 @@ import { showDialog } from './shared.svelte';
 import { post } from './utils';
 
 export const ss = $state({
+    level: 1,
     fobs: [],
     dlg: true,
     streak_ticks: 0,
