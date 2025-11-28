@@ -1,10 +1,12 @@
 <script>
     import { fade } from 'svelte/transition';
+	import { loadGame } from './shared.svelte';
 
     let classes = $state('splash');
 
     const onPointerDown = () => {
         localStorage.clear();
+        loadGame();
         classes = 'splash dark';
     };
 </script>
